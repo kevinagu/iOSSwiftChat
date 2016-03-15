@@ -6,8 +6,10 @@
 //  Copyright © 2016 kevin Agudelo Betancourt. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class MessagesViewController: UIViewController {
-
+    override func viewDidLoad() {
+        
+    }
 }

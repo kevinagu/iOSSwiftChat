@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="iOSChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,78 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RUf-iU-jeW">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="Te3-EV-jwY"/>
+                                    <constraint firstAttribute="width" constant="127" id="Tic-CV-zsS"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Te3-EV-jwY"/>
+                                        <exclude reference="Tic-CV-zsS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Te3-EV-jwY"/>
+                                        <include reference="Tic-CV-zsS"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Me &amp; U Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz7-E5-IQq">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RUf-iU-jeW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9UI-pB-bd3"/>
+                            <constraint firstItem="fz7-E5-IQq" firstAttribute="top" secondItem="RUf-iU-jeW" secondAttribute="bottom" constant="8" id="VJp-X3-LZu"/>
+                            <constraint firstAttribute="trailing" secondItem="fz7-E5-IQq" secondAttribute="trailing" constant="20" id="a8j-X6-Sjj"/>
+                            <constraint firstItem="fz7-E5-IQq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="jkQ-qq-ZYM"/>
+                            <constraint firstItem="RUf-iU-jeW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z3h-cJ-jn6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RUf-iU-jeW"/>
+                                <exclude reference="fz7-E5-IQq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="VJp-X3-LZu"/>
+                                <exclude reference="a8j-X6-Sjj"/>
+                                <exclude reference="jkQ-qq-ZYM"/>
+                                <exclude reference="9UI-pB-bd3"/>
+                                <exclude reference="z3h-cJ-jn6"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="RUf-iU-jeW"/>
+                                <include reference="fz7-E5-IQq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="VJp-X3-LZu"/>
+                                <include reference="a8j-X6-Sjj"/>
+                                <include reference="jkQ-qq-ZYM"/>
+                                <include reference="9UI-pB-bd3"/>
+                                <include reference="z3h-cJ-jn6"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="iconImage" destination="RUf-iU-jeW" id="k4K-Yx-4pv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="279" y="354"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chatIcon" width="133" height="100"/>
+    </resources>
 </document>
